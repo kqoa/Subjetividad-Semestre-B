@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diagrama de flujo · Saber 11 · 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF2EC;--ink:#1D2B26;--mut:#546159;--panel:#FFFFFF;--line:#CBD5CC;--c1:#2B5C7A;--c2:#B5483A;--c3:#2F6B4F;--c4:#B87A12;--c5:#6A4C93;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111A16;--ink:#E7EFEA;--mut:#9DB0A5;--panel:#1A2621;--line:#2C3B34;--c1:#6FA8CC;--c2:#E3806F;--c3:#6FC49A;--c4:#E0AE4E;--c5:#B697DE;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111A16;--ink:#E7EFEA;--mut:#9DB0A5;--panel:#1A2621;--line:#2C3B34;--c1:#6FA8CC;--c2:#E3806F;--c3:#6FC49A;--c4:#E0AE4E;--c5:#B697DE;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Atkinson Hyperlegible",system-ui,sans-serif}
+header{max-width:900px;margin:0 auto;padding:28px 20px 8px}
+h1{margin:0;font:700 clamp(26px,4vw,40px)/1.15 "Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif}
+header p{margin:8px 0 0;color:var(--mut);max-width:70ch}
+main{max-width:900px;margin:0 auto;padding:12px 20px 40px}
+.wrap{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:10px;overflow-x:auto}
+svg{display:block;width:100%;min-width:560px;height:auto}
+.shape{stroke-width:2.5}
+.t{fill:var(--ink);text-anchor:middle;font-family:"Atkinson Hyperlegible",sans-serif}
+.tt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700}
+.ln{fill:none;stroke:var(--mut);stroke-width:2.5}
+.lb{fill:var(--ink);font:700 14px "Bricolage Grotesque",sans-serif;text-anchor:middle}
+.s1{fill:color-mix(in srgb,var(--c3) 16%,var(--panel));stroke:var(--c3)}
+.s2{fill:color-mix(in srgb,var(--c1) 14%,var(--panel));stroke:var(--c1)}
+.s3{fill:color-mix(in srgb,var(--c4) 20%,var(--panel));stroke:var(--c4)}
+.s4{fill:color-mix(in srgb,var(--c2) 12%,var(--panel));stroke:var(--c2)}
+.s5{fill:color-mix(in srgb,var(--c5) 14%,var(--panel));stroke:var(--c5)}
+.leg{display:flex;flex-wrap:wrap;gap:14px;margin:14px 4px 0;font-size:14px;color:var(--mut)}
+.leg i{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:2px solid}
+</style>
+</head>
+<body>
+<header>
+<h1>Diagrama de flujo: Saber 11 · 2026</h1>
+<p>Institución Educativa Técnica Agropecuaria. Ruta desde los resultados hasta las decisiones de mejora, con dos puntos de decisión y un regreso al plan cuando no hay mejora.</p>
+</header>
+<main>
+<div class="wrap"><svg id="svg" viewBox="0 0 860 1100" role="img" aria-label="Diagrama de flujo de mejora de resultados Saber 11 2026"></svg></div>
+<div class="leg">
+<span><i style="border-color:var(--c3)"></i>Inicio y fin</span>
+<span><i style="border-color:var(--c1)"></i>Análisis</span>
+<span><i style="border-color:var(--c4)"></i>Decisión</span>
+<span><i style="border-color:var(--c2)"></i>Plan por área</span>
+<span><i style="border-color:var(--c5)"></i>Acción y seguimiento</span>
+</div>
+</main>
+<script>
+const NS='http://www.w3.org/2000/svg',svg=document.getElementById('svg');
+function el(n,a,txt){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(txt!==undefined)e.textContent=txt;svg.appendChild(e);return e}
+const defs=el('defs',{});const mk=document.createElementNS(NS,'marker');
+mk.setAttribute('id','ar');mk.setAttribute('viewBox','0 0 10 10');mk.setAttribute('refX','8');mk.setAttribute('refY','5');mk.setAttribute('markerWidth','7');mk.setAttribute('markerHeight','7');mk.setAttribute('orient','auto-start-reverse');
+const mp=document.createElementNS(NS,'path');mp.setAttribute('d','M0 0L10 5L0 10z');mp.setAttribute('fill','var(--mut)');mk.appendChild(mp);defs.appendChild(mk);
+function text(cx,y,title,lines,fs){
+ let t=el('text',{x:cx,y:y,class:'t tt','font-size':fs||16},title);
+ lines.forEach((l,i)=>el('text',{x:cx,y:y+(fs?fs+4:20)+i*(fs?fs+4:19),class:'t','font-size':fs?fs-3.5:14.5},l));}
+function box(x,y,w,h,cls,title,lines,rx,fs){
+ el('rect',{x,y,width:w,height:h,rx:rx||10,class:'shape '+cls});
+ const n=lines.length+1,lh=fs?fs+4:19,top=y+h/2-(n*lh)/2+lh*0.75;
+ text(x+w/2,top,title,lines,fs);}
+function dia(cx,cy,hw,hh,title,lines){
+ el('polygon',{points:`${cx},${cy-hh} ${cx+hw},${cy} ${cx},${cy+hh} ${cx-hw},${cy}`,class:'shape s3'});
+ const n=lines.length+1,top=cy-(n*19)/2+14;text(cx,top,title,lines);}
+function line(d,arrow){el('path',{d,class:'ln','marker-end':arrow===false?'':'url(#ar)'})}
+const C=430;
+box(280,20,300,50,'s1','Resultados Saber 11 · 2026',[],25);
+line(`M${C} 70V100`);
+box(180,100,500,70,'s2','1. Diagnóstico',['Global 231,5 de 500 · 41 estudiantes · 78 % en nivel 2 en Ciencias Naturales','26,8 % en alerta (menos de 200 puntos)'],10,16);
+line(`M${C} 170V200`);
+box(180,200,500,70,'s2','2. Interpretar frente a 2025',['Sociales +1,5 · Lectura −1,6 · Matemáticas −3,6','Ciencias Naturales −5,2 · Inglés −8,1'],10,16);
+line(`M${C} 270V295`);
+dia(C,350,170,55,'¿Área con media bajo 50',['o mayoría en nivel 2?']);
+el('text',{x:C+14,y:424,class:'lb',style:'text-anchor:start'},'Sí');
+el('text',{x:612,y:342,class:'lb'},'No');
+line(`M${C} 405V430`,false);
+box(640,322,160,56,'s1','Mantener y',['reforzar estrategias'],10,15);
+line('M600 350H640',true);
+line(`M800 350H840V615H630`);
+// bus plan
+line(`M130 430H730`,false);
+const P=[['Lectura Crítica',['Infografías y','caricaturas;','premisas implícitas']],['Matemáticas',['Problemas con','contexto y lectura','de gráficos']],['C. Naturales',['Diseño experimental','y análisis de','variables']],['Sociales',['Estudio de casos y','multiperspectiva;','derechos humanos']],['Inglés',['Vocabulario y','lectura corta en','contexto']]];
+P.forEach((p,i)=>{const x=60+i*150,cx=x+70;line(`M${cx} 430V450`);box(x,450,140,90,'s4',p[0],p[1],10,14);line(`M${cx} 540V560`,false)});
+line(`M130 560H730`,false);
+line(`M${C} 560V580`);
+box(230,580,400,70,'s5','3. Acciones transversales',['3 simulacros al año · formación docente','olimpiadas del saber · atención a estudiantes en alerta'],10,16);
+line(`M${C} 650V680`);
+box(230,680,400,70,'s5','4. Seguimiento bimestral',['Indicadores por área · sede principal, Las y CLEI','análisis de errores por competencia'],10,16);
+line(`M${C} 750V780`);
+box(230,780,400,60,'s5','5. Retroalimentación',['Mesas de trabajo · rúbricas · familias y comunidad'],10,16);
+line(`M${C} 840V870`);
+dia(C,925,190,55,'¿Subió la media y bajaron',['los estudiantes en alerta?']);
+el('text',{x:C+14,y:1004,class:'lb',style:'text-anchor:start'},'Sí');
+line(`M${C} 980V1020`);
+box(250,1020,360,56,'s1','Saber 2027',['Consolidar y subir a nivel 3'],28,16);
+el('text',{x:222,y:917,class:'lb'},'No');
+box(30,900,170,50,'s4','Ajustar el plan',['por área'],10,15);
+line('M240 925H200');
+line('M30 925H15V430H130');
+</script>
+</body>
+</html>
