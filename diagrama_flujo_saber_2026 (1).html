@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diagrama de flujo · Saber 11 · 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF2EC;--ink:#1D2B26;--mut:#546159;--panel:#FFFFFF;--line:#CBD5CC;--c1:#2B5C7A;--c2:#B5483A;--c3:#2F6B4F;--c4:#B87A12;--c5:#6A4C93;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111A16;--ink:#E7EFEA;--mut:#9DB0A5;--panel:#1A2621;--line:#2C3B34;--c1:#6FA8CC;--c2:#E3806F;--c3:#6FC49A;--c4:#E0AE4E;--c5:#B697DE;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111A16;--ink:#E7EFEA;--mut:#9DB0A5;--panel:#1A2621;--line:#2C3B34;--c1:#6FA8CC;--c2:#E3806F;--c3:#6FC49A;--c4:#E0AE4E;--c5:#B697DE;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Atkinson Hyperlegible",system-ui,sans-serif}
+header{max-width:900px;margin:0 auto;padding:28px 20px 8px}
+h1{margin:0;font:700 clamp(26px,4vw,40px)/1.15 "Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif}
+header p{margin:8px 0 0;color:var(--mut);max-width:70ch}
+main{max-width:900px;margin:0 auto;padding:12px 20px 40px}
+.wrap{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:10px;overflow-x:auto}
+svg{display:block;width:100%;min-width:640px;height:auto}
+.shape{stroke-width:2.5}
+.t{fill:var(--ink);text-anchor:middle;font-family:"Atkinson Hyperlegible",sans-serif}
+.tt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700}
+.tl{text-anchor:start}
+.ln{fill:none;stroke:var(--mut);stroke-width:2.5}
+.lb{fill:var(--ink);font:700 14px "Bricolage Grotesque",sans-serif;text-anchor:middle}
+.s1{fill:color-mix(in srgb,var(--c3) 16%,var(--panel));stroke:var(--c3)}
+.s2{fill:color-mix(in srgb,var(--c1) 14%,var(--panel));stroke:var(--c1)}
+.s3{fill:color-mix(in srgb,var(--c4) 20%,var(--panel));stroke:var(--c4)}
+.s4{fill:color-mix(in srgb,var(--c2) 12%,var(--panel));stroke:var(--c2)}
+.s5{fill:color-mix(in srgb,var(--c5) 14%,var(--panel));stroke:var(--c5)}
+.th{fill:color-mix(in srgb,var(--c1) 26%,var(--panel));stroke:var(--line);stroke-width:1.5}
+.cell{fill:var(--panel);stroke:var(--line);stroke-width:1.5}
+.hl{fill:color-mix(in srgb,var(--c3) 24%,var(--panel));stroke:var(--line);stroke-width:1.5}
+.leg{display:flex;flex-wrap:wrap;gap:14px;margin:14px 4px 0;font-size:14px;color:var(--mut)}
+.leg i{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:2px solid}
+</style>
+</head>
+<body>
+<header>
+<h1>Diagrama de flujo: Saber 11 · 2026</h1>
+<p>Institución Educativa Técnica Agropecuaria, municipio de Herrera, Tolima. Ruta desde los resultados hasta la propuesta de política educativa, con dos puntos de decisión y un regreso a la política cuando no hay mejora.</p>
+</header>
+<main>
+<div class="wrap"><svg id="svg" viewBox="0 0 860 1870" role="img" aria-label="Diagrama de flujo de la política educativa a partir de los resultados Saber 11 2026"></svg></div>
+<div class="leg">
+<span><i style="border-color:var(--c3)"></i>Inicio y resultado</span>
+<span><i style="border-color:var(--c1)"></i>Datos y análisis</span>
+<span><i style="border-color:var(--c4)"></i>Decisión</span>
+<span><i style="border-color:var(--c2)"></i>Política educativa</span>
+<span><i style="border-color:var(--c5)"></i>Implementación</span>
+</div>
+</main>
+<script>
+const NS='http://www.w3.org/2000/svg',svg=document.getElementById('svg');
+function el(n,a,txt){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(txt!==undefined)e.textContent=txt;svg.appendChild(e);return e}
+const defs=el('defs',{});const mk=document.createElementNS(NS,'marker');
+mk.setAttribute('id','ar');mk.setAttribute('viewBox','0 0 10 10');mk.setAttribute('refX','8');mk.setAttribute('refY','5');mk.setAttribute('markerWidth','7');mk.setAttribute('markerHeight','7');mk.setAttribute('orient','auto-start-reverse');
+const mp=document.createElementNS(NS,'path');mp.setAttribute('d','M0 0L10 5L0 10z');mp.setAttribute('fill','var(--mut)');mk.appendChild(mp);defs.appendChild(mk);
+function text(cx,y,title,lines,fs){
+ el('text',{x:cx,y:y,class:'t tt','font-size':fs||16},title);
+ lines.forEach((l,i)=>el('text',{x:cx,y:y+(fs?fs+4:20)+i*(fs?fs+4:19),class:'t','font-size':fs?fs-3.5:14.5},l));}
+function box(x,y,w,h,cls,title,lines,rx,fs){
+ el('rect',{x,y,width:w,height:h,rx:rx||10,class:'shape '+cls});
+ const n=lines.length+1,lh=fs?fs+4:19,top=y+h/2-(n*lh)/2+lh*0.75;
+ text(x+w/2,top,title,lines,fs);}
+function dia(cx,cy,hw,hh,title,lines){
+ el('polygon',{points:`${cx},${cy-hh} ${cx+hw},${cy} ${cx},${cy+hh} ${cx-hw},${cy}`,class:'shape s3'});
+ const n=lines.length+1,top=cy-(n*19)/2+14;text(cx,top,title,lines);}
+function line(d,arrow){el('path',{d,class:'ln','marker-end':arrow===false?'':'url(#ar)'})}
+function table(x,y,cols,hh,rh,rows,hlRow){
+ let cy=y;
+ rows.forEach((r,ri)=>{const h=ri===0?hh:rh;let cx=x;
+  r.forEach((v,ci)=>{
+   el('rect',{x:cx,y:cy,width:cols[ci],height:h,class:ri===0?'th':(ri===hlRow?'hl':'cell')});
+   const parts=String(v).split('|');
+   parts.forEach((p,pi)=>el('text',{x:(ci===0&&ri>0)?cx+10:cx+cols[ci]/2,y:cy+h/2+(pi-(parts.length-1)/2)*15+4.5,class:'t'+((ci===0&&ri>0)?' tl':'')+((ri===0||ri===hlRow)?' tt':''),'font-size':13},p));
+   cx+=cols[ci]});
+  cy+=h});}
+const C=430;
+
+box(280,20,300,50,'s1','Resultados Saber 11 · 2026',[],25);
+line(`M${C} 70V100`);
+box(180,100,500,70,'s2','1. Diagnóstico',['Global 231,5 de 500 · 41 estudiantes · desviación estándar 37,6','Rango 184–323 · 26,8 % en alerta (menos de 200 puntos)'],10,16);
+line(`M${C} 170V195`);
+
+el('rect',{x:60,y:195,width:740,height:190,rx:10,class:'shape s2'});
+el('text',{x:C,y:217,class:'t tt','font-size':16},'Niveles de desempeño 2026 por área');
+table(65,229,[170,140,140,140,140],40,26,[
+ ['Asignatura','Nivel 1|Insuficiente','Nivel 2|Mínimo','Nivel 3|Satisfactorio','Nivel 4|Avanzado'],
+ ['Lectura Crítica','2,4 % (1 est.)','68,3 % (28 est.)','29,3 % (12 est.)','0,0 % (0 est.)'],
+ ['Matemáticas','12,2 % (5 est.)','53,7 % (22 est.)','31,7 % (13 est.)','2,4 % (1 est.)'],
+ ['Ciencias Naturales','2,4 % (1 est.)','78,0 % (32 est.)','19,5 % (8 est.)','0,0 % (0 est.)'],
+ ['Sociales y Ciudadanas','12,2 % (5 est.)','65,9 % (27 est.)','22,0 % (9 est.)','0,0 % (0 est.)']]);
+line(`M${C} 385V410`);
+
+el('rect',{x:60,y:410,width:740,height:188,rx:10,class:'shape s2'});
+el('text',{x:C,y:432,class:'t tt','font-size':16},'Contexto: Saber 11 · 2025 (SEDTOLIMA)');
+table(65,444,[190,90,90,90,90,90,90],28,26,[
+ ['Institución','Global','Lectura','Matem.','Sociales','C. Nat.','Inglés'],
+ ['Colombia','261','55','53','49','51','53'],
+ ['Tolima','243','52','50','45','48','48'],
+ ['Institución','235','50','49','43','47','46']],3);
+el('text',{x:75,y:578,class:'t tt tl','font-size':13},'Categoría:');
+['2022: D','2023: D','2024: D','2025: C'].forEach((v,i)=>{
+ el('rect',{x:165+i*110,y:560,width:100,height:26,rx:6,class:i===3?'hl':'cell'});
+ el('text',{x:215+i*110,y:578,class:'t'+(i===3?' tt':''),'font-size':13},v)});
+el('text',{x:610,y:578,class:'t tl','font-size':13},'Sube de D a C en 2025');
+line(`M${C} 598V623`);
+
+box(180,623,500,70,'s2','2. Interpretar frente a 2025',['Sociales +1,5 · Lectura −1,6 · Matemáticas −3,6','Ciencias Naturales −5,2 · Inglés −8,1'],10,16);
+line(`M${C} 693V718`);
+
+dia(C,773,170,55,'¿Área con media bajo 50',['o mayoría en nivel 2?']);
+el('text',{x:C+14,y:847,class:'lb',style:'text-anchor:start'},'Sí');
+el('text',{x:612,y:765,class:'lb'},'No');
+box(640,745,160,56,'s1','Mantener y',['reforzar estrategias'],10,15);
+line('M600 773H640');
+line('M800 773H840V1468H660');
+line(`M${C} 828V853`);
+
+box(130,853,600,80,'s4','3. Propuesta de política educativa',['«Educación rural de calidad, inclusiva y pertinente','para el desarrollo de la comunidad»'],10,16);
+line(`M${C} 933V958`,false);
+
+const E=[
+ ['Eje 1. Calidad',['Aprendizajes y práctica','pedagógica','Planes de mejora por área','3 simulacros al año','Formación docente','Meta: más estudiantes','en niveles 3 y 4']],
+ ['Eje 2. Permanencia',['Que los estudiantes','continúen y culminen','Seguimiento a asistencia','Acompañamiento a familias','Alimentación y transporte','Meta: menos deserción','y más graduados']],
+ ['Eje 3. Pertinencia',['Educación ligada al','contexto rural','Proyectos productivos','Alianzas con SENA y','educación superior','Saberes campesinos','y emprendimiento rural']],
+ ['Eje 4. Cobertura',['Acceso para toda la','población rural','Búsqueda activa','Transporte escolar','y oferta CLEI','Infraestructura y','conectividad']]
+];
+line('M147 958H711',false);
+E.forEach((e,i)=>{const x=60+i*188,cx=x+87;
+ line(`M${cx} 958V978`);
+ box(x,978,175,190,'s4',e[0],e[1],10,16);
+ line(`M${cx} 1168V1188`,false)});
+line('M147 1188H711',false);
+line(`M${C} 1188V1208`);
+
+box(200,1208,460,50,'s4','Plan de mejora por área (Eje 1)',['Resultados Saber: cinco áreas evaluadas'],10,16);
+line(`M${C} 1258V1283`,false);
+line('M130 1283H730',false);
+const P=[['Lectura Crítica',['Infografías y','caricaturas;','premisas implícitas']],['Matemáticas',['Problemas con','contexto y lectura','de gráficos']],['C. Naturales',['Diseño experimental','y análisis de','variables']],['Sociales',['Estudio de casos y','multiperspectiva;','derechos humanos']],['Inglés',['Vocabulario y','lectura corta en','contexto']]];
+P.forEach((p,i)=>{const x=60+i*150,cx=x+70;line(`M${cx} 1283V1303`);box(x,1303,140,90,'s4',p[0],p[1],10,14);line(`M${cx} 1393V1413`,false)});
+line('M130 1413H730',false);
+line(`M${C} 1413V1433`);
+
+box(200,1433,460,70,'s5','4. Implementación articulada',['Directivos, docentes, estudiantes, familias,','comunidad y entidades territoriales'],10,16);
+line(`M${C} 1503V1533`);
+box(230,1533,400,60,'s5','5. Retroalimentación',['Mesas de trabajo · rúbricas · familias y comunidad'],10,16);
+line(`M${C} 1593V1623`);
+
+dia(C,1678,190,55,'¿Subió la media y bajaron',['los estudiantes en alerta?']);
+el('text',{x:C+14,y:1757,class:'lb',style:'text-anchor:start'},'Sí');
+line(`M${C} 1733V1763`);
+box(250,1763,360,70,'s1','Resultados esperados',['Mejor desempeño · menos deserción','identidad rural · más acceso'],28,16);
+el('text',{x:222,y:1670,class:'lb'},'No');
+box(30,1653,170,50,'s4','Ajustar la política',['por eje'],10,15);
+line('M240 1678H200');
+line('M30 1678H15V958H147');
+</script>
+</body>
+</html>
